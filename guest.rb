@@ -20,15 +20,15 @@ class Guest
     @wallet -= club.entry_fee
   end
 
-  # def choose_song(room, songs, song)
-  #   if room.songs.include?(song) == true
-  #     return "Hooray!"
-  #   else
-  #     return "Sorry, we do not have that song, please feel free to suggest
-  #     it is added to our list"
-  #   end
-  # end
-
+  def fav_song_play(room)
+    if room.songs.include?(@favourite_song)
+      room.play_song(@favourite_song)
+      return "Yay! I can sing my fav song"
+    else
+      return
+        "Boo, they don't have my fav song"
+    end
+  end
 
 
 end

@@ -51,7 +51,10 @@ class GuestTest < MiniTest::Test
     assert_equal(190, @Guest1.wallet)
   end
 
-  
+  def test_play_fav_song
+    actual = @Guest1.fav_song_play(@Room1)
+    assert_equal("Yay! I can sing my fav song", actual)
+  end
 
 
 end

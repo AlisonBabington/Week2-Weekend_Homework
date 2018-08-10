@@ -28,9 +28,13 @@ class Room
 
   def play_song(song)
     if @songs.include?(song) == true
-    return "Get ready, #{song.title} is starting... "
+      return "Get ready, #{song.title} is starting... "
+    else
+     return "Sorry, we do not have that song, please feel free to suggest
+     it is added to our list"
     end
   end
+
 
 
 end
