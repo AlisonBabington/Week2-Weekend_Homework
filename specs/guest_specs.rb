@@ -4,12 +4,20 @@ require('minitest/rg')
 require_relative('../guest.rb')
 require_relative('../song.rb')
 require_relative('../ccc.rb')
+require_relative('../room.rb')
 
 class GuestTest < MiniTest::Test
 
   def setup
     @CCC = CCC.new("CodeClan Bar", [@Room1, @Room2], 10, 300,
     [@Guest1])
+
+    @Room1 = Room.new("Purple Room", [@Song1, @Song2],
+    [@Guest1, @Guest2, @Guest3, @Guest4, @Guest5], 5)
+
+    @Song1 = Song.new("Purple Rain", "Prince")
+    @Song2 = Song.new("Just a Girl", "No Doubt")
+    @Song3 = Song.new("Uptown Girl", "Backstreet Boys")
 
     @Guest1 = Guest.new("Mike", 19, 200, "Purple Rain")
     @Guest2 = Guest.new("Dill", 17, 8, "Livin' on a Prayer")
@@ -37,6 +45,13 @@ class GuestTest < MiniTest::Test
     assert_equal(true, actual1)
     assert_equal(false, actual2)
   end
+
+  def test_entry_pay
+    @Guest1.entry_pay(@CCC, @CCC.entry_fee)
+    assert_equal(190, @Guest1.wallet)
+  end
+
+  
 
 
 end

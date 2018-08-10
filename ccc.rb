@@ -18,4 +18,15 @@ class CCC
   def new_guest_add(guest)
     @guests << guest
   end
+
+  def charge_entry(guest,wallet,club)
+    if  guest.afford_entry?(club, @entry_fee) == true
+      guest.entry_pay(club, @entry_fee)
+      @till += @entry_fee
+    else
+      return false
+    end
+  end
+
+
 end

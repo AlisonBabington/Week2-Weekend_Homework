@@ -51,4 +51,10 @@ class CCCTest < MiniTest::Test
     assert_equal(2, @CCC.guests.count)
   end
 
+  def test_ccc_charge_entry_fee
+    @CCC.charge_entry(@Guest1, @Guest1.wallet, @CCC)
+    actual = @CCC.till
+    assert_equal(310 ,actual)
+  end
+
 end

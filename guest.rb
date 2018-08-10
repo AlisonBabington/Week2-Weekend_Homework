@@ -16,6 +16,19 @@ class Guest
     @wallet >= club.entry_fee
   end
 
+  def entry_pay(club,entry_fee)
+    @wallet -= club.entry_fee
+  end
+
+  # def choose_song(room, songs, song)
+  #   if room.songs.include?(song) == true
+  #     return "Hooray!"
+  #   else
+  #     return "Sorry, we do not have that song, please feel free to suggest
+  #     it is added to our list"
+  #   end
+  # end
+
 
 
 end

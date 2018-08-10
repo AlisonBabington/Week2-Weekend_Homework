@@ -26,5 +26,9 @@ class Room
     @guests.count < @room_size
   end
 
+  def play_song(song, title)
+    return "Get ready, #{song.title} is starting... "
+  end
+
 
 end
