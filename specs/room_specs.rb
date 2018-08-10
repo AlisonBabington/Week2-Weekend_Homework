@@ -60,8 +60,8 @@ class RoomTest < MiniTest::Test
   end
 
   def test_room_play_song
-    expected = "Get ready, Purple Rain is starting... "
-    actual = @Room1.play_song(@Song1, @Song1.title)
+    p expected = "Get ready, Purple Rain is starting... "
+    actual = @Room1.play_song(@Song1)
     assert_equal(expected, actual)
   end
 end

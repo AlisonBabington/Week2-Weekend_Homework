@@ -26,8 +26,10 @@ class Room
     @guests.count < @room_size
   end
 
-  def play_song(song, title)
+  def play_song(song)
+    if @songs.include?(song) == true
     return "Get ready, #{song.title} is starting... "
+    end
   end
 
 
