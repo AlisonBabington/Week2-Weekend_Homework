@@ -1,12 +1,13 @@
 class CCC
 
   attr_reader :name
-  attr_accessor :rooms, :entry_fee, :till, :guests
+  attr_accessor :rooms, :entry_fee, :till, :guests, :membership_fee
 
-  def initialize(name, rooms, entry_fee, till, guests)
+  def initialize(name, rooms, entry_fee, till, guests, membership_fee)
     @name = name
     @rooms = rooms || []
     @entry_fee = entry_fee
+    @membership_fee = membership_fee
     @till = till
     @guests = guests || []
   end
@@ -26,6 +27,9 @@ class CCC
     else
       return false
     end
+  end
+
+  def charge_membership(guest,wallet)
   end
 
 

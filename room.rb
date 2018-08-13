@@ -1,13 +1,14 @@
 class Room
 
-  attr_reader :room_name, :songs
+  attr_reader :room_name, :songs, :bar
   attr_accessor :guests, :room_size
 
-  def initialize(room_name, songs, guests, room_size)
+  def initialize(room_name, songs, guests, room_size, bar)
     @room_name = room_name
     @songs = songs || []
     @guests = guests || []
     @room_size = room_size
+    @bar = bar
   end
 
   def add_song(song)
@@ -18,7 +19,11 @@ class Room
     @guests << guest
   end
 
-  def check_guest_out(guest)
+  def check_guest_out(guest, bar)
+    if guest.member_status = "member"
+    bar.paid_tab(guest)
+    @guests.delete(guest)
+    end
     @guests.delete(guest)
   end
 

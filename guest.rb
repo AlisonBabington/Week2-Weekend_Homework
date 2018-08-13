@@ -3,13 +3,15 @@
 class Guest
 
   attr_reader :name, :age, :favourite_song
-  attr_accessor :wallet
+  attr_accessor :wallet, :member_status, :tab
 
-  def initialize(name, age, wallet,favourite_song)
+  def initialize(name, age, wallet,favourite_song, member_status)
     @name = name
     @age = age
     @wallet = wallet
     @favourite_song = favourite_song
+    @member_status = member_status
+    @tab = 0
   end
 
   def afford_entry?(club,entry_fee)
@@ -28,6 +30,28 @@ class Guest
       return
         "Boo, they don't have my fav song"
     end
+  end
+
+  def buy_drink(bar,drink)
+    @wallet -= drink.price
+  end
+
+  def afford_membership(club, membership_fee)
+    @wallet>=club.membership_fee
+  end
+
+  def buy_membership(club, membership_fee)
+    @wallet -= membership_fee
+    @member_status = "member"
+  end
+
+  def member_tab_drink(bar,drink)
+      membership_drinks = drink.price / 2
+      @tab += membership_drinks
+  end
+
+  def pay_tab
+    @wallet -= @tab
   end
 
 
