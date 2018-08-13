@@ -5,7 +5,7 @@ class Room
 
   def initialize(room_name, songs, guests, room_size, bar)
     @room_name = room_name
-    @songs = songs || []
+    @songs = songs 
     @guests = guests || []
     @room_size = room_size
     @bar = bar

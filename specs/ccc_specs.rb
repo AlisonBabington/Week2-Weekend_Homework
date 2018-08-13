@@ -14,8 +14,8 @@ class CCCTest < MiniTest::Test
     @Song3 = Song.new("Love will tear us apart", "Joy Division")
     @Song4 = Song.new("I will always love you", "Whitney Houston")
 
-    @Guest1 = Guest.new("Mike", 19, 200, "Purple Rain")
-    @Guest2 = Guest.new("Elsie", 14, 50, "Shake it Off")
+    @Guest1 = Guest.new("Mike", 19, 200, "Purple Rain", "Member")
+    @Guest2 = Guest.new("Elsie", 14, 50, "Shake it Off", "Guest")
 
     @Room1 = Room.new("Purple Room", [@Song1, @Song2], [], 5)
     @Room2 = Room.new("Red Room", [@Song1, @Song2], [] ,6)
