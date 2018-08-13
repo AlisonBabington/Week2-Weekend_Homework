@@ -23,8 +23,9 @@ class Guest
   end
 
   def fav_song_play(room)
-    if room.songs.title.include?(@favourite_song)
-      room.play_song(@favourite_song)
+    room.show_playlist
+    if playlist.include?(@favourite_song)
+    room.play_song(@favourite_song)
       return "Yay! I can sing my fav song"
     else
       return

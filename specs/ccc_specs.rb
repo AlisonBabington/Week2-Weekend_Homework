@@ -17,12 +17,12 @@ class CCCTest < MiniTest::Test
     @Guest1 = Guest.new("Mike", 19, 200, "Purple Rain", "Member")
     @Guest2 = Guest.new("Elsie", 14, 50, "Shake it Off", "Guest")
 
-    @Room1 = Room.new("Purple Room", [@Song1, @Song2], [], 5)
-    @Room2 = Room.new("Red Room", [@Song1, @Song2], [] ,6)
-    @Room3 = Room.new("Blue Room", [@Song3, @Song4], [], 5)
+    @Room1 = Room.new("Purple Room", [@Song1, @Song2], [], 5, " ")
+    @Room2 = Room.new("Red Room", [@Song1, @Song2], [] ,6, " ")
+    @Room3 = Room.new("Blue Room", [@Song3, @Song4], [], 5, " ")
 
     @CCC = CCC.new("CodeClan Bar", [@Room1, @Room2], 10, 300,
-    [@Guest1])
+    [@Guest1], 60)
   end
 
   def test_ccc_has_name

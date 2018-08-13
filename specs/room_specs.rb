@@ -19,7 +19,7 @@ class RoomTest < MiniTest::Test
     @Song2 = Song.new("Just a Girl", "No Doubt")
     @Song3 = Song.new("Uptown Girl", "Backstreet Boys")
 
-    @Room1 = Room.new("Purple Room", [@Song1, @Song2],
+    @Room1 = Room.new("Purple Room", [@Songs],
     [@Guest1, @Guest2, @Guest3, @Guest4, @Guest5], 5, @Bar1)
     @Room2 = Room.new("Red Room", [@Song2, @Song3],[@Guest1, @Guest2], 5, @Bar1)
 
@@ -66,5 +66,10 @@ class RoomTest < MiniTest::Test
     expected = "Get ready, Purple Rain is starting... "
     actual = @Room1.play_song(@Song1)
     assert_equal(expected, actual)
+  end
+
+  def test_playlist
+    p @Room1.show_playlist
+    assert_equal( )
   end
 end
