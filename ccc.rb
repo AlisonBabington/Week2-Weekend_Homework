@@ -30,6 +30,10 @@ class CCC
   end
 
   def charge_membership(guest,wallet)
+    if guest.afford_membership?(club, @membership_fee) == true
+      guest.buy_membership(club, @membership_fee) 
+      @till += @membership_fee
+    end
   end
 
 
